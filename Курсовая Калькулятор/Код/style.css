@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+    background-color:lightgray;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputEquation {
+    display: block;
+    overflow-x: scroll;
+    width: 900px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    border-color: black;
+}
+
+.buttonEqual {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgray;
+    border-color: black;
+    margin-left: 5px;
+}
+
+.underMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1px;
+}
+
+.main {
+    display: flex;
+    margin-top: 40px;
+    width: auto;
+    height: auto;
+    justify-content: center;
+}
+
+.fieldForRules {
+    margin-top: 28px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+    height: 310px;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    overflow-x: hidden;
+}
+
+.rules {
+    font-size: 20px;
+    margin-top: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    margin-left: 20px;
+    margin-top: 29px;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+}
+
+.buttonNumber {
+    display: flex;
+    width: 65px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    margin: -1px -1px -1px -1px;
+}
+
+.buttonZero {
+    display: flex;
+    width: 128px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    margin: -1px -1px -1px -1px;
+}
+
+.buttonCalc {
+    display: flex;
+    width: 65px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: darkorange;
+    margin: -1px -1px -1px -1px;
+}
+
+.buttonAdditional {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgray;
+    margin-right: 1px;
+    margin-left: 1px;
+}
+
+.solutionOfEquation {
+    width: 45vw;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.equation {
+    margin-bottom: 20px;
+    width: 45vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.fieldForEquation {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    height: 5vh;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.labelEquation {
+    font-size: 25px;
+}
+
+.answer {
+    margin-bottom: 20px;
+    width: 45vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.fieldForAnswer {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    height: 5vh;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.labelAnswer {
+    font-size: 25px;
+}
+
+.historyOfEquations {
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.buttonHistory {
+    width: 13vw;
+    height: 5vh;
+    font-size: 15px;
+}
+
+.fieldForHistory {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.labelHistory {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
