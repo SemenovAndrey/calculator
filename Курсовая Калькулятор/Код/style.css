@@ -14,7 +14,13 @@ h2 {
 
 body {
     overflow-x: hidden;
-    background-color:lightgray;
+    background-color: var(--sbgc);
+    position: relative;
+}
+
+:root {
+    --bgc:lightgray;
+    --sbgc:gray;
 }
 
 .input {
@@ -31,7 +37,7 @@ body {
     font-size: 25px;
     text-align: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--bgc);
     border-color: black;
 }
 
@@ -50,7 +56,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1px;
+    margin-top: -2px;
+    gap: 2px;
 }
 
 .main {
@@ -66,9 +73,9 @@ body {
     margin-right: 20px;
     align-items: center;
     justify-content: center;
-    width: 18vw;
-    height: 310px;
-    background-color: white;
+    width: 16vw;
+    height: 50vh;
+    background-color: var(--bgc);
     border-style: solid;
     border-width: 2px;
     border-color: black;
@@ -77,7 +84,7 @@ body {
 
 .rules {
     font-size: 20px;
-    margin-top: 2px;
+    margin-top: 6px;
     align-items: center;
     justify-content: center;
 }
@@ -95,7 +102,7 @@ body {
 
 .buttonNumber {
     display: flex;
-    width: 65px;
+    width: 60px;
     height: 80px;
     align-items: center;
     justify-content: center;
@@ -105,7 +112,7 @@ body {
 
 .buttonZero {
     display: flex;
-    width: 128px;
+    width: 118px;
     height: 80px;
     align-items: center;
     justify-content: center;
@@ -115,7 +122,7 @@ body {
 
 .buttonCalc {
     display: flex;
-    width: 65px;
+    width: 60px;
     height: 80px;
     align-items: center;
     justify-content: center;
@@ -130,8 +137,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: darkgray;
-    margin-right: 1px;
-    margin-left: 1px;
 }
 
 .solutionOfEquation {
@@ -158,7 +163,7 @@ body {
     justify-content: center;
     width: 45vw;
     height: 5vh;
-    background-color: white;
+    background-color: var(--bgc);
     border-color: black;
     border-style: solid;
     border-width: 2px;
@@ -182,7 +187,7 @@ body {
     justify-content: center;
     width: 45vw;
     height: 5vh;
-    background-color: white;
+    background-color: var(--bgc);
     border-color: black;
     border-style: solid;
     border-width: 2px;
@@ -203,6 +208,7 @@ body {
     text-align: center;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 6px;
 }
 
 .buttonHistory {
@@ -220,7 +226,7 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
-    background-color: white;
+    background-color: var(--bgc);
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -232,4 +238,26 @@ body {
     font-size: 20px;
     text-align: center;
     align-items: center;
+}
+
+.hrHistory {
+    width: 10vw;
+    background-color: black;
+    border-color: black;
+}
+
+.interfaceColor {
+    font-size: xx-large;
+    font-weight: 800;
+    border: solid black;
+    border-radius: 50%;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgc);
+    position: absolute;
+    left: 20px;
+    top: 10px;
 }

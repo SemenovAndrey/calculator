@@ -15,23 +15,26 @@
             <button class="buttonEqual" id="equal"> = </button>
         </div>
         <div class="underMenu">
-            <button class="buttonAdditional" id="buttonClear" onclick="document.getElementById('inputEquation').value=''"> C </button>
-            <button class="buttonAdditional" id="buttonPow" onclick="document.getElementById('inputEquation').value+='pow('"> pow </button>
+            <button class="buttonAdditional" id="buttonClearInput" onclick="document.getElementById('inputEquation').value=''"> C </button>
+            <button class="buttonAdditional" id="buttonPow" onclick="document.getElementById('inputEquation').value+='**'"> ** </button>
             <button class="buttonAdditional" id="buttonSqrt" onclick="document.getElementById('inputEquation').value+='sqrt('"> sqrt </button>
             <button class="buttonAdditional" id="buttonRemainder" onclick="document.getElementById('inputEquation').value+='%'"> % </button>
             <button class="buttonAdditional" id="buttonLeftBracket" onclick="document.getElementById('inputEquation').value+='('"> ( </button>
             <button class="buttonAdditional" id="buttonRightBracket" onclick="document.getElementById('inputEquation').value+=')'"> ) </button>
-            <button class="buttonAdditional" id="buttonSin" onclick="document.getElementById('inputEquation').value+='sin('"> sin </button>
-            <button class="buttonAdditional" id="buttonCos" onclick="document.getElementById('inputEquation').value+='cos('"> cos </button>
-            <button class="buttonAdditional" id="buttonSin" onclick="document.getElementById('inputEquation').value+='tg('"> tg </button>
-            <button class="buttonAdditional" id="buttonCos" onclick="document.getElementById('inputEquation').value+='ctg('"> ctg </button>
+            <button class="buttonAdditional" id="buttonSin" onclick="document.getElementById('inputEquation').value+='sin((pi / 180) * '"> sin </button>
+            <button class="buttonAdditional" id="buttonCos" onclick="document.getElementById('inputEquation').value+='cos((pi / 180) * '"> cos </button>
+            <button class="buttonAdditional" id="buttonSin" onclick="document.getElementById('inputEquation').value+='tg((pi / 180) * '"> tg </button>
         </div>
         <div class="main">
             <div class="fieldForRules">
-                <h2> Правила написания примера </h2>
-                <div class="rules"> sin(x) - синус </div>
-                <div class="rules"> cos(x) - косинус </div>
-                <div class="rules"> pow(x, y) - возведение x в степень y </div>
+                <h2> Правила ввода примера </h2>
+                <div class="rules"> sin((pi / 180) * x) - синус </div>
+                <div class="rules"> cos((pi / 180) * x) - косинус </div>
+                <div class="rules"> tg((pi / 180) * x) - тангенс </div>
+                <div class="rules"> sin(x) - синус в радианах </div>
+                <div class="rules"> cos(x) - косинус в радианах </div>
+                <div class="rules"> tg(x) - тангенс в радианах </div>
+                <div class="rules"> (x ** y) - возведение числа x в степень y </div>
                 <div class="rules"> sqrt(x) - взятие корня числа </div>
                 <div class="rules"> % - остаток от деления </div>
                 <div class="rules"> C - очистить </div>
@@ -78,10 +81,11 @@
                 <div class="historyOfEquations" id="historyOfEquations">
                     <div class="buttons">
                         <button class="buttonHistory" id="buttonHistory"> Показать/скрыть историю </button>
-                        <button class="buttonHistory" id="buttonClear"> Очистить историю </button>
+                        <button class="buttonHistory" id="buttonClearHistory"> Очистить историю </button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="interfaceColor" id="changeTheme"> &#127769; </div>
     </body>
 </html>

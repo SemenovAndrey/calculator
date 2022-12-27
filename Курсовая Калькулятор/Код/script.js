@@ -1,13 +1,15 @@
 let sin = Math.sin;
 let cos = Math.cos;
 let tg = Math.tan;
-let ctg = 1 / Math.tan;
 let sqrt = Math.sqrt;
 let pow = Math.pow;
+let pi = Math.PI;
 
 function main() {
     console.log('Начало работы');
-    console.log('-----');
+
+    // цвет темы
+    let flagTheme = true; // true - светлая, false - тёмная
 
     // массив, куда сохраняются результаты
     let arrayOfEquations = [];
@@ -35,27 +37,23 @@ function main() {
                     labelEqaution.innerHTML = 'Введено некорректное значение';
                     labelAnswer.innerHTML = '';
                     finalEquation = 'Введено некорректное значение';
-                    console.log('Ответ:', finalEquation);
-                    console.log('-----');
+                    console.log(finalEquation);
                 } else {
                     labelAnswer.innerHTML = result;
                     finalEquation = equationText + ' = ' + result;
                     console.log('Ответ:', finalEquation);
-                    console.log('-----');
                     // добавление примера и ответа в массив
                     arrayOfEquations.push(finalEquation);
                 }
             } catch (e) {
                 // console.log(e);
                 console.log('Введено некорректное значение');
-                console.log('-----');
                 labelEqaution.innerHTML = 'Введено некорректное значение';
                 labelAnswer.innerHTML = '';
             }
         } else {
             // если поле ввода пустое
             console.log('Поле ввода пустое');
-            console.log('-----');
             labelEqaution.innerHTML = '';
             labelAnswer.innerHTML = '';
         }
@@ -75,23 +73,35 @@ function main() {
             if (len > 0) {
                 divHistory.appendChild(fieldForHistory);
                 let k = 1;
-                for (let i = 0; i < len; i++) {
-                    let labelHistory = document.createElement('label');
-                    labelHistory.className = 'labelHistory';
-                    labelHistory.id = k;
-                    labelHistory.innerHTML = arrayOfEquations[i];
-                    fieldForHistory.appendChild(labelHistory);
-                    // console.log(arrayOfEquations[i]);
-                    k += 1;
+                for (let i = len; i > 0; i--) {
+                    if (i > 1) {
+                        let labelHistory = document.createElement('label');
+                        labelHistory.className = 'labelHistory';
+                        labelHistory.id = k;
+                        labelHistory.innerHTML = arrayOfEquations[i - 1];
+                        fieldForHistory.appendChild(labelHistory);
+                        // console.log(arrayOfEquations[i]);
+                        k += 1;
+                        let hr = document.createElement('hr');
+                        hr.className = 'hrHistory';
+                        hr.id = k;
+                        fieldForHistory.appendChild(hr);
+                        k += 1;
+                    } else {
+                        let labelHistory = document.createElement('label');
+                        labelHistory.className = 'labelHistory';
+                        labelHistory.id = k;
+                        labelHistory.innerHTML = arrayOfEquations[i - 1];
+                        fieldForHistory.appendChild(labelHistory);
+                        // console.log(arrayOfEquations[i]);
+                        k += 1;
+                    }
                 }
-                // console.log('-----');
 
                 console.log('История показана');
-                console.log('-----');
-                flag = true;
+                flag = !flag;
             } else {
                 console.log('Данные либо не вносились, либо очищены');
-                console.log('-----');
             }
         } else {
             // если история открыта
@@ -104,30 +114,41 @@ function main() {
             fieldForHistory.remove();
 
             console.log('История скрыта');
-            console.log('-----');
-            flag = false;
+            flag = !flag;
         }
     }
 
-    document.getElementById('buttonClear').onclick = function() {
-        console.log('-');
-    }
-
     // кнопка "Очистить историю"
-    document.getElementById('buttonClear').onclick = function() {
-        console.log('-');
+    document.getElementById('buttonClearHistory').onclick = function() {
         arrayOfEquations = [];
-        // let len = arrayOfEquations.length;
-        /*if (len > 0) {
-            for (let i = 0; i < len; i++) {
-                arrayOfEquations.pop();
-            }
-        }*/
-
-        console.log('-----');
+        let k = 1;
+        while (fieldForHistory.hasChildNodes()) {
+            let elem = document.getElementById(k);
+            elem.remove();
+            k += 1;
+        }
+        fieldForHistory.remove();
+            
+        flag = false;
+        console.log('История скрыта');
         console.log('История очищена');
-        console.log('-----');
     }
+
+    // смена цвета
+    document.getElementById('changeTheme').addEventListener('click', function() {
+        if (flagTheme) {
+            this.innerHTML = '&#9788;';
+            document.body.style.setProperty('--bgc', 'gray');
+            document.body.style.setProperty('--sbgc', 'lightgray');
+            console.log('Цвет темы переключен на светлую');
+        } else {
+            this.innerHTML = '&#127769;';
+            document.body.style.setProperty('--sbgc', 'gray');
+            document.body.style.setProperty('--bgc', 'lightgray');
+            console.log('Цвет темы переключен на тёмную');
+        }
+        flagTheme = !flagTheme;
+    });
 }
 
 window.addEventListener('load', () => {
